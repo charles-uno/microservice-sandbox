@@ -12,3 +12,5 @@ ADD . /sandbox
 WORKDIR /sandbox
 
 RUN make app
+
+CMD ./app

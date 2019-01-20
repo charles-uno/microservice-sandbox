@@ -3,16 +3,16 @@ FROM centos
 
 RUN yum install -y epel-release
 
-RUN yum -y update
+RUN yum install -y \
+    python \
+    python-pip
 
-RUN yum install -y python python-pip
-
-RUN pip install flask connexion
+RUN pip install \
+    connexion \
+    flask
 
 RUN mkdir -p /sandbox
-
 ADD . /sandbox
-
 WORKDIR /sandbox
 
-EXPOSE 5000
+CMD ./app.py

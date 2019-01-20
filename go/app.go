@@ -31,7 +31,7 @@ func factors(w http.ResponseWriter, r *http.Request) {
     // Grab the given number. Third-party tools do this better.
     n, err := strconv.Atoi( r.URL.Path[9:] )
     if err == nil && n > 0 {
-        out, _ := json.MarshalIndent(get_factors(n), "", "    ")
+        out, _ := json.MarshalIndent(get_factors(n), "", "  ")
         fmt.Fprintf(w, string(out) + "\n")
     } else {
         w.WriteHeader(400)
