@@ -1,0 +1,32 @@
+swagger: "2.0"
+info:
+  description: Example REST API that factors positive integers
+  version: "1.0.0"
+  title: Factorizer
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+paths:
+
+  /factors/{n}:
+    get:
+      operationId: primes.get_factors
+      summary: Get the factors of a positive integer
+      description: Get the factors of a positive integer
+      parameters:
+        - name: n
+          in: path
+          description: Positive integer to factor
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully factored value
+          schema:
+            type: array
+            items:
+              type: integer
