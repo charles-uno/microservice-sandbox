@@ -17,5 +17,5 @@ def factors(n):
 
 def get_factors(n):
     if not isinstance(n, int) or n < 1:
-        flask.abort(404, "Give a positive integer, not " + repr(n))
+        flask.abort(400, "Give a positive integer, not " + repr(n))
     return list( factors(n) )

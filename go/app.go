@@ -54,6 +54,6 @@ func main() {
     handler := http.NewServeMux()
     handler.HandleFunc("/factors/", factors)
     handler.HandleFunc("/", catchall)
-    err := http.ListenAndServe(":8081", handler)
+    err := http.ListenAndServe(":8080", handler)
     log.Fatal(err)
 }

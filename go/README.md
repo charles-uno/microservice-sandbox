@@ -7,7 +7,7 @@ Creates a microservice within a Docker container. To fire up the microservice lo
 make
 ```
 
-Then point your browser to `localhost:8081/factors/N` for some positive integer `N` (or use `curl`). For example, a `GET` operation on `localhost:8081/factors/357` returns:
+This will pull the dependencies and API source into a Docker image, then run the API within that image, publishing the container's port 8080 to `localhost:8081`. To see it in action, point your browser to `localhost:8081/factors/N` for some positive integer `N` (or use `curl`). It should spit out a (JSON-formatted) list of that number's factors. For example, `localhost:8081/factors/357` shows:
 
 ```
 [

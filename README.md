@@ -11,4 +11,8 @@ In both cases, the build process looks about like this:
 - Build/install the API source into the image.
 - Run the container, publishing the relevant port.
 
-For Python I use port 5000. For Go, I use 8081. These are just conventions, and readily changed. Additionally, Docker's `--publish` function allows arbitrary mapping between container ports and host ports. In principle, all containerized APIs could use (container) port 5000 and they could be dynamically mapped to host ports as needed. 
+For Python I use port 5000. For Go, I use 8081. These are just conventions, and readily changed. Additionally, Docker's `--publish` function allows arbitrary mapping between container ports and host ports. In principle, all containerized APIs could use (container) port 5000 and they could be dynamically mapped to host ports as needed.
+
+Next up is to figure out the Swagger magic that allows these APIs to be plugged into Kubernetes or whatever.
+
+Note that debug messages and error responses may not match verbatim between Python and Go implementations, but proper usage does.
