@@ -1,0 +1,32 @@
+swagger: "2.0"
+info:
+  description: Example Go-Based REST API
+  version: "1.0.0"
+  title: Factorizer (Go)
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /
+
+paths:
+
+  /factors/{n}:
+    get:
+      summary: Get the factors of a positive integer
+      description: Get the factors of a positive integer
+      parameters:
+        - name: n
+          in: path
+          description: Positive integer to factor
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully factored value
+          schema:
+            type: array
+            items:
+              type: integer
+        400:
